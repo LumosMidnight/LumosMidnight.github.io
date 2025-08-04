@@ -204,7 +204,6 @@ h1, h2, h3, h4, h5, h6, figure {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -295,6 +294,61 @@ h1, h2, h3, h4, h5, h6, figure {
   transform: scale(1.2);
 }
 
+/* Estilo base del header con video */
+#fh5co-header.fh5co-videobg {
+  position: relative;
+  height: 100vh; /* Ocupa toda la altura visible */
+  overflow: hidden;
+}
+
+/* Video como fondo */
+#fh5co-header.fh5co-videobg .video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Overlay oscuro sobre el video */
+#fh5co-header.fh5co-videobg .overlay {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Contenido por encima del overlay y video */
+#fh5co-header.fh5co-videobg > .container {
+  position: relative;
+  z-index: 10;
+}
+
+/* Contenedor de alineación vertical */
+.display-t {
+  display: table;
+  height: 100vh; /* Misma altura que el header */
+  width: 100%;
+}
+
+/* Contenedor interno centrado */
+.display-tc {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#fh5co-header.fh5co-videobg {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .fh5co-cover {
   background-size: cover;
     background-repeat: no-repeat;
@@ -306,7 +360,7 @@ h1, h2, h3, h4, h5, h6, figure {
 @media (max-width: 768px) {
   .fh5co-cover {
     height: 800px;
-    background-image:url(../images/img_bg_mobile_color_2.jpg);
+    /*background-image:url(../images/img_bg_mobile_color_2.jpg);*/
   }
 }
 
@@ -314,7 +368,7 @@ h1, h2, h3, h4, h5, h6, figure {
 @media (min-width: 769px) and (max-width: 1023px) {
   .fh5co-cover {
     height: 800px;
-    background-image:url(../images/img_bg_2_mobile.jpg);
+    /*background-image:url(../images/img_bg_2_mobile.jpg);*/
   }
 }
 
@@ -324,7 +378,7 @@ h1, h2, h3, h4, h5, h6, figure {
     height: 900px;
     
     width: 100%; 
-    background-image:url(../images/img_bg_2.jpg); 
+    /*background-image:url(../images/img_bg_2.jpg); */
   }
 }
 
@@ -554,7 +608,7 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 .timeline > li > .timeline-badge {
-  background-size: cover;
+  background-size: 60%;
   background-position: top center;
   background-repeat: no-repeat;
   position: relative;
@@ -568,12 +622,14 @@ h1, h2, h3, h4, h5, h6, figure {
   top: 16px;
   left: 50%;
   margin-left: -80px;
-  background-color: #999999;
-  z-index: 100;
+  
+  background-color: white;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
+
+  z-index: 100;
 }
 @media screen and (max-width: 480px) {
   .timeline > li > .timeline-badge {
@@ -784,13 +840,11 @@ h1, h2, h3, h4, h5, h6, figure {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
 }
 .fh5co-social-icons li a {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
   color: #790f3dcc;
   padding-left: 10px;
   padding-right: 10px;
@@ -859,7 +913,7 @@ form label {
 .fh5co-cover .display-tc h2 {
   margin: 0;
   padding: 0;
-  color: white;
+  color:  #790f3dcc;
 }
 #fh5co-header .display-tc h1,
 #fh5co-counter .display-tc h1,
@@ -873,14 +927,14 @@ form label {
   #fh5co-header .display-tc h1,
   #fh5co-counter .display-tc h1,
   .fh5co-cover .display-tc h1 {
-    font-size: 40px;
+    font-size: 50px;
   }
 }
 @media screen and (max-width: 480px) {
   #fh5co-header .display-tc h1,
   #fh5co-counter .display-tc h1,
   .fh5co-cover .display-tc h1 {
-    font-size: 50px;
+    font-size: 60px;
   }
 }
 #fh5co-header .display-tc h2,
@@ -894,7 +948,7 @@ form label {
   #fh5co-header .display-tc h2,
   #fh5co-counter .display-tc h2,
   .fh5co-cover .display-tc h2 {
-    font-size: 22px;
+    font-size: 28px;
   }
 }
 #fh5co-header .display-tc .btn,
@@ -1148,12 +1202,12 @@ form label {
   margin-left: 5px;
 }
 .couple-half .desc-groom {
-  padding-right: 180px;
+  padding-right: 100px;
   padding-top:3em;
   text-align: right;
 }
 .couple-half .desc-bride {
-  padding-left: 180px;
+  padding-left: 100px;
   text-align: left;
   padding-top:3em;
 }
@@ -1268,7 +1322,6 @@ form label {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
   width: 100px;
   height: 100px;
 }
@@ -1915,4 +1968,29 @@ form label {
 .blurry-text {
   color: transparent;
   text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.blurry-text:hover {
+  color: black;
+  text-shadow: none;
+}
+
+.boton-formulario {
+  background-color: #790f3d;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(121, 15, 61, 0.3);
+  cursor: pointer;
+}
+.boton-formulario:hover {
+  background-color: #a01250; /* un poco más claro para efecto hover */
+  box-shadow: 0 6px 16px rgba(121, 15, 61, 0.4);
+  transform: translateY(-2px);
 }
